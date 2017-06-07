@@ -66,7 +66,6 @@ let Project21 = React.createClass({
                 // TODO  http://blog.csdn.net/u014484863/article/details/51732074  secureTextEntry 	设置是否为密码安全输入框
                 secureTextEntry = {true}
 
-
                 onChangeText = { (newText) => this.updataPW(newText)}
                 />
             <Text style = {styles.bigTextPrompt}>
