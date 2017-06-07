@@ -4,7 +4,7 @@
  * @flow
  */
 'use strict'
-//暂时不清楚为什么这里不能够使用这种写法（现实中，这么写会导致无法显示，并出现异常）
+// TODO 暂时不清楚为什么这里不能够使用这种写法（现实中，这么写会导致无法显示，并出现异常）
 /*let React = require('react-native');
 let {
     AppRegistry,StyleSheet,Text,View,TextInput
@@ -25,13 +25,16 @@ let leftStartPoint = totalWidth * 0.1;
 let componentWidth = totalWidth * 0.8;
 
 let Project21 = React.createClass({
+    // TODO 定义状态机变量，并进行初始化：该函数会被自动调用；【界面编写最好尽量减少状态变量的声明与使用{并非不允许}】
     getInitialState: function(){
         return {
             inputedNum:'',
             inputedPW:'',
         };
     },
+    //定义更新变量函数
     updataNum: function(newText){
+        // TODO 状态变量不可直接使用赋值语句，必须使用setState函数进行赋值
         this.setState((state) => {
             return {
                 inputedNum:newText,
@@ -48,6 +51,8 @@ let Project21 = React.createClass({
     render : function() {
         return (
         <View style={styles.container}>
+            // TODO 会形成状态变更的组件在回调函数中调用更新状态变量的函数
+            // TODO render 函数中会保证该状态变量变更时数据与显示的同步
             <TextInput style = {styles.numberInputStyle}
                 placeholder = {'请输入手机号'}
                 onChangeText = { (newText) => this.updataNum(newText)}/>
@@ -58,7 +63,7 @@ let Project21 = React.createClass({
                 placeholder={'请输入密码'}
                 password = {true}
 
-                // http://blog.csdn.net/u014484863/article/details/51732074  secureTextEntry 	设置是否为密码安全输入框
+                // TODO  http://blog.csdn.net/u014484863/article/details/51732074  secureTextEntry 	设置是否为密码安全输入框
                 secureTextEntry = {true}
 
 
@@ -71,7 +76,7 @@ let Project21 = React.createClass({
         );
     }
 });
-//颜色使用是#RRGGBBAA的形式，与原生项目中稍有不同
+// TODO 颜色使用是#RRGGBBAA的形式，与原生项目中稍有不同
 let styles = StyleSheet.create({
     container:{
         flex:1,
@@ -104,9 +109,9 @@ let styles = StyleSheet.create({
         top:70,
         left:leftStartPoint,
         width:componentWidth,
-        backgroundColor:'gray',//背景颜色
-        color:'white',//文字颜色
-        textAlign:'center',//文字对齐效果
+        backgroundColor:'gray',// TODO 背景颜色
+        color:'white',// TODO 文字颜色
+        textAlign:'center',// TODO 文字对齐效果
         fontSize:40
     }
 });
