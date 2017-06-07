@@ -25,6 +25,10 @@ let leftStartPoint = totalWidth * 0.1;
 let componentWidth = totalWidth * 0.8;
 
 let Project21 = React.createClass({
+
+    //setState( object oldState,function callback) TODO 第二个为可选参数，第一个参数传入的是未进行修改的旧值，callback的调用是在完成了UI的渲染后才会调用
+
+
     // TODO 定义状态机变量，并进行初始化：该函数会被自动调用；【界面编写最好尽量减少状态变量的声明与使用{并非不允许}】
     getInitialState: function(){
         return {
@@ -58,7 +62,7 @@ let Project21 = React.createClass({
                 onChangeText = { (newText) => this.updataNum(newText)}/>
             <Text style = {styles.textPromptStyle}>
                 您输入的手机号:{this.state.inputedNum}
-            </Text>
+            </Text
             <TextInput style = {styles.passwordInputStyle}
                 placeholder={'请输入密码'}
                 password = {true}
