@@ -25,16 +25,15 @@ let Platform = require('Platform');//
 let leftStartPoint = totalWidth * 0.1;
 let componentWidth = totalWidth * 0.8;
 
-if(Platform.OS==="android"){//TODO 检测平台为Android
-
-}else{//TODO 检测平台为iOS
-
-}
+//if(Platform.OS==="android"){//TODO 检测平台为Android
+//
+//}else{//TODO 检测平台为iOS
+//
+//}
 
 let RegisterLeaf = React.createClass({
 
     //setState( object oldState,function callback) TODO 第二个为可选参数，第一个参数传入的是未进行修改的旧值，callback的调用是在完成了UI的渲染后才会调用
-
 
     // TODO 定义状态机变量，并进行初始化：该函数会被自动调用；【界面编写最好尽量减少状态变量的声明与使用{并非不允许}】
     getInitialState: function(){
@@ -79,11 +78,20 @@ let RegisterLeaf = React.createClass({
 
                 onChangeText = { (newText) => this.updataPW(newText)}
                 />
-            <Text style = {styles.bigTextPrompt}>
+            <Text style = {styles.bigTextPrompt}
+                onPress={this.userPressConfirm}
+            >
                 确定
             </Text>
         </View>
         );
+    },
+    userPressConfirm:function(){
+        this.props.navigator.push({
+            phoneNumber: this.state.inputedNnm,
+            userPW:this.state.inputedPW,
+            name:'waiting'
+        });
     }
 });
 // TODO 颜色使用是#RRGGBBAA的形式，与原生项目中稍有不同

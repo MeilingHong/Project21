@@ -123,10 +123,17 @@ let {
 
  //TODO Chapter3
 'use strict'
-var React = require('react-native');
-var {
-    AppRegistry, Navigator, BackAndroid
-} = React;
+
+//var React = require('react-native');
+//var {
+//    AppRegistry, Navigator, BackAndroid
+//} = React;
+import React, { Component } from 'react';
+import {
+  AppRegistry, Navigator, BackAndroid
+} from 'react-native';
+
+//TODO 需要注意文件名称一定要对应，否则会出错
 var RegisterLeaf = require('./RegisterLeaf');
 var WaitingLeaf = require('./WaitingLeaf');
 
@@ -158,14 +165,14 @@ var NaviModule = React.createClass({
         BackAndroid.removeEventListener('NaviModuleListener');
     },
     render:function(){
-        return{
+        return(
             <Navigator
-                initialRoute=
+                initialRoute={{name:'register'}}
+                configureScene={this.configureScene}
+                renderScene = {this.renderScene}
                 />
-        };
+        );
     }
 });
 
-
-
-AppRegistry.registerComponent('Project21', () => Project21);
+AppRegistry.registerComponent('Project21', () => NaviModule);
