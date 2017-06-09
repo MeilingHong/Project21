@@ -130,14 +130,19 @@ let {
 //} = React;
 import React, { Component } from 'react';
 import {
-  AppRegistry, Navigator, BackAndroid
+  AppRegistry, BackAndroid
 } from 'react-native';
+//import {//TODO 最新 的react-native中Navigator已经被从react-native中移除
+//  Navigator
+//} from 'react-native-deprecated-custom-components';
+
+import { Navigator } from 'react-navigation';
 
 //TODO 需要注意文件名称一定要对应，否则会出错
-var RegisterLeaf = require('./RegisterLeaf');
-var WaitingLeaf = require('./WaitingLeaf');
+let RegisterLeaf = require('./RegisterLeaf');
+let WaitingLeaf = require('./WaitingLeaf');
 
-var NaviModule = React.createClass({
+let NaviModule = React.createClass({
     configureScene: function(route){
         return Navigator.SceneConfigs.FadeAndroid;
     },

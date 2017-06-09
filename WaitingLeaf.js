@@ -27,8 +27,7 @@ let WaitingLeaf = React.createClass({
                 注册使用密码:{this.props.userPW}
             </Text>
             <Text style = {styles.bigTextPrompt}
-                onPress={this.goBack}
-            >
+                onPress={this.goBack} >
                 返回
             </Text>
         </View>

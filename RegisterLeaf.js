@@ -68,7 +68,7 @@ let RegisterLeaf = React.createClass({
                 onChangeText = { (newText) => this.updataNum(newText)}/>
             <Text style = {styles.textPromptStyle}>
                 您输入的手机号:{this.state.inputedNum}
-            </Text
+            </Text>
             <TextInput style = {styles.passwordInputStyle}
                 placeholder={'请输入密码'}
                 password = {true}
